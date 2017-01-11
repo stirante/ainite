@@ -1,0 +1,19 @@
+input("ocena z a", "number")
+input("ocena z b", "number")
+input("ocena z c", "number")
+input("palisz papierosy", "boolean")
+
+calculate("srednia", "(ocena z a + ocena z b + ocena z c)/3")
+
+model("wysoka srednia", "srednia >= 4.5")
+model("negatywna ocena z a", "ocena z a == 2")
+model("negatywna ocena z b", "ocena z b == 2")
+model("negatywna ocena z c", "ocena z c == 2")
+
+rule("masz stypendium", ["wysoka srednia"])
+rule("niezdales", ["negatywna ocena z a", "negatywna ocena z b"])
+rule("niezdales", ["negatywna ocena z c", "negatywna ocena z b"])
+rule("niezdales", ["negatywna ocena z a", "negatywna ocena z c"])
+rule("masz raka", ["palisz papierosy"])
+
+alias("masz stypendium", "Zdobyłeś stypendium!", "Twoja średnia jest powyżej 4.5")
