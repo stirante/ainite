@@ -108,8 +108,9 @@ public class RuleExecutor {
             System.out.println("Model: " + e.getKey() + " = " + obj);
         }
         //execute rules
-        for (Map.Entry<String, ArrayList<String>> e : rules.getRules().entrySet()) {
-            ArrayList<String> rs = e.getValue();
+        for (RuleSet.Rule e : rules.getRules()) {
+            if (result.contains(e.getName())) continue;
+            ArrayList<String> rs = e.getModels();
             boolean good = true;
             for (String r : rs) {
                 if (!bools.containsKey(r) || !bools.get(r)) {
@@ -117,7 +118,7 @@ public class RuleExecutor {
                     break;
                 }
             }
-            if (good) result.add(e.getKey());
+            if (good) result.add(e.getName());
         }
         clear();
         return result;

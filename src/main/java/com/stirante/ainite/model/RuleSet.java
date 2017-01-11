@@ -14,7 +14,7 @@ public class RuleSet {
     private HashMap<String, String> inputs = new HashMap<>();
     private HashMap<String, String> calculates = new HashMap<>();
     private HashMap<String, String> models = new HashMap<>();
-    private HashMap<String, ArrayList<String>> rules = new HashMap<>();
+    private ArrayList<Rule> rules = new ArrayList<>();
     private HashMap<String, RuleAlias> aliases = new HashMap<>();
 
     public RuleSet(String script) {
@@ -45,7 +45,7 @@ public class RuleSet {
         return models;
     }
 
-    public HashMap<String, ArrayList<String>> getRules() {
+    public ArrayList<Rule> getRules() {
         return rules;
     }
 
@@ -73,6 +73,24 @@ public class RuleSet {
 
         public String getDescription() {
             return description;
+        }
+    }
+
+    class Rule {
+        private String name;
+        private ArrayList<String> models;
+
+        public Rule(String name, ArrayList<String> models) {
+            this.name = name;
+            this.models = models;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public ArrayList<String> getModels() {
+            return models;
         }
     }
 
@@ -117,7 +135,7 @@ public class RuleSet {
                 while (matcher1.find()) {
                     list.add(matcher1.group(1));
                 }
-                rules.put(matcher.group(1), list);
+                rules.add(new Rule(matcher.group(1), list));
                 return true;
             }
             return false;

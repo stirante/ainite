@@ -27,9 +27,9 @@ public class Main {
         }
         RuleSet rules = new RuleSet(script);
         RuleExecutor executor = new RuleExecutor(rules);
-        executor.setInput("ocena z a", 5);
-        executor.setInput("ocena z b", 4);
-        executor.setInput("ocena z c", 5);
+        executor.setInput("ocena z a", 2);
+        executor.setInput("ocena z b", 5);
+        executor.setInput("ocena z c", 2);
         executor.setInput("palisz papierosy", true);
         System.out.println("Result: " + executor.execute());
     }
