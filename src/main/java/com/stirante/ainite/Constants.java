@@ -45,6 +45,6 @@ public class Constants {
         /**
          * Group 1: name - model name
          */
-        public static final Pattern RULE_LIST = Pattern.compile("\"([A-Za-z0-9 ]+)\"");
+        public static final Pattern MODEL_LIST = Pattern.compile("\"([A-Za-z0-9 ]+)\"");
     }
 }
