@@ -29,12 +29,12 @@ public class RuleExecutor {
         return rules;
     }
 
-    public void setInput(String name, Object value) {
+    public void setInput(String name, String value) {
         if (!rules.getInputs().containsKey(name)) throw new IllegalArgumentException("Input name '" + name + "' not found!");
         if (rules.getInputs().get(name).equalsIgnoreCase("number")) {
-            numbers.put(name, Float.parseFloat(value.toString()));
+            numbers.put(name, Float.parseFloat(value));
         } else if (rules.getInputs().get(name).equalsIgnoreCase("boolean")) {
-            bools.put(name, (boolean) value);
+            bools.put(name, Boolean.parseBoolean(value));
         }
         System.out.println("Input: " + name + " = " + value);
     }
