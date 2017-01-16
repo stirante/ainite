@@ -18,32 +18,32 @@ public class Constants {
          */
         public static final Pattern INPUT = Pattern.compile("input\\(\"([a-zA-Z 0-9]+)\", *\"([a-zA-Z 0-9]+)\"\\)");
         /**
-         * calculate("name", "js")
+         * calculates("name", "js")
          * Group 1: name - variable name
          * Group 2: js - javascript to execute
          */
         public static final Pattern CALCULATE = Pattern.compile("calculate\\(\"([a-zA-Z 0-9]+)\", *\"(.+)\"\\)");
         /**
-         * model("name", "js")
-         * Group 1: name - model name
+         * models("name", "js")
+         * Group 1: name - models name
          * Group 2: js - javascript to execute
          */
         public static final Pattern MODEL = Pattern.compile("model\\(\"([a-zA-Z 0-9]+)\", *\"(.+)\"\\)");
         /**
          * alias("name", "alias", "description")
-         * Group 1: name - rule name
+         * Group 1: name - rules name
          * Group 2: alias - name publicly visible
-         * Group 3: description - rule description
+         * Group 3: description - rules description
          */
         public static final Pattern ALIAS = Pattern.compile("alias\\(\"([a-zA-Z 0-9]+)\", *\"(.*)\", *\"(.*)\"\\)");
         /**
-         * rule("name", ["model1", "model2"])
-         * Group 1: name - rule name
+         * rules("name", ["model1", "model2"])
+         * Group 1: name - rules name
          * Group 2: models - list of models
          */
         public static final Pattern RULE = Pattern.compile("rule\\(\"([a-zA-Z 0-9]+)\", *\\[(.+)]\\)");
         /**
-         * Group 1: name - model name
+         * Group 1: name - models name
          */
         public static final Pattern MODEL_LIST = Pattern.compile("\"([A-Za-z0-9 ]+)\"");
     }
